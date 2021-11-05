@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Добавление товара - магазин "TechShop"{% endblock %}</title>
+</head>
+<body>
+{% block main %}
+    <br>
+    <center>
+    <form action="/addproduct/" method="post" >
+        {% csrf_token %}
+    <label>
+        <input type="text" name ='name' class="writeUS" placeholder="Название товара" required><br>
+        <input type="number" name='price' class="writeUS" placeholder="Цена" required><br>
+        <input type="text" name='description' class="writeUS" placeholder="Описание" required><br>
+        <select name='category' class="writeUS">
+            {% for cat in category %}
+                <option class="writeUS">{{ cat.name }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="file" name='img' alt="image"><br>
+        <input type="submit" id="submit">
+    </label>
+    </form>
+    </center>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="keywords" content="интернет магазин, техника" />
+        <meta name="description" content="Сайт магазина электроники" />
+    <title>
+        {% block title %}
+            Интернет-магазин TechShop
+        {% endblock %}
+    </title>
+    </head>
+    {% block backcolour %} {{colour}} {% endblock %}
+
+<body>
+{% block main %}
+
+    <dialog id="cartWindow">
+        <p id="cart_title">Ваши товары</p>
+        <div id="cart_content"></div>
+        <a href="#" id="clear_cart">Оформить заказ</a>
+        <a href="#" id="go_on">Продолжить покупки</a>
+    </dialog>
+
+    <div class="clear"><br/></div>
+    
+    <center>
+        <div id="menu">Каталог товаров<hr /></div>
+            <ul class="topMenu">
+                <li><a href="">Смартфоны</a>
+{#                    <ul class="submenu">#}
+{#                        <li><a href="">Apple</a></li>#}
+{#                        <li><a href="">Samsung</a></li>#}
+{#                        <li><a href="">Huawei</a></li>#}
+{#                        <li><a href="">Xiaomi</a></li>#}
+{#                    </ul>#}
+        </li>
+                <li><a href="">Ноутбуки</a>
+{#                    <ul class="submenu">#}
+{#                        <li><a href="">Asus</a></li>#}
+{#                        <li><a href="">HP</a></li>#}
+{#                        <li><a href="">Apple</a></li>#}
+{#                        <li><a href="">Microsoft</a></li>#}
+{#                    </ul>#}
+        </li>
+                <li><a href="">Телевизоры</a>
+{#                    <ul class="submenu">#}
+{#                        <li><a href="">LG</a></li>#}
+{#                        <li><a href="">Samsung</a></li>#}
+{#                        <li><a href="">Sony</a></li>#}
+{#                      </ul>#}
+        </li>
+                <li><a href="">Переферия</a>
+{#                    <ul class="submenu">#}
+{#                        <li><a href="">Наушники</a></li>#}
+{#                        <li><a href="">Мышки</a></li>#}
+{#                        <li><a href="">Клавиатуры</a></li>#}
+{#                    </ul>#}
+        </li>
+            </ul>
+    </center>
+
+    <div class="products">
+        {% for product in product %}
+        <div class="item_box">
+            <div class="product-item">
+                <img src="{{ product.image.url }}" alt="{{ product.title }} image">
+                <a href="" class="add_item" data-id="{{ product.slug }}">В корзину</a>
+                <h3 class="item_title">{{ product.title }}</h3>
+
+                <p>Цена: <span class="item_price">{{ product.price }}</span><span class="item_price"> грн</span></p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <script src="../../static/cart2.js"></script>
+    {% endblock %}
+</body>
+
+</html>

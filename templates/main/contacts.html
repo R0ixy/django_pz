@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{#    <meta charset="UTF-8">#}
+    <title>{% block title %}Контакты - магазин "TechShop"{% endblock %}</title>
+{#    <link href="../../static/css/styles.css" rel="stylesheet" type="text/css" />#}
+{#    <link href="../../static/img/icon.ico" rel="shortcut icon" type="image/x-icon" />#}
+</head>
+<body>
+{% block main %}
+{#<div id="page-wrap">#}
+{#    <header>#}
+{#        <a href="{% url 'index' %}" title="На главную" id="logo">TechShop</a>#}
+{#        <span id="about"><a href="{% url 'about' %}">О нас</a></span>#}
+{#        <input type="text" class="field" placeholder="Поиск" />#}
+{#        <ul class="topMenu" id="HeadMenu">#}
+{#            <li><a href="#" id="client">Клиентам</a>#}
+{#                <ul class="submenu">#}
+{#                    <li><a class="locked" href="{% url 'contacts' %}">Контакты</a></li>#}
+{#                    <li><a href="{% url 'delivery' %}">Доставка и оплата</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </header>#}
+
+    <div id="container">
+        <div class="con">
+        <table class="tab">
+            <caption><h3>Консультации и заказы по телефонам</h3></caption>
+            <tr><td rowspan="2">Бесплатно по Украине:</td><td>(0-800) 300-100</td></tr>
+            <tr><td>(0-800) 200-100</td></tr>
+            <tr><td rowspan="2">Согласно тарифа оператора:</td><td>(056) 790-12-34 </td></tr>
+            <tr><td>(056) 797-63-23</td></tr>
+        </table>
+        </div>
+<!--        <div class="con">-->
+<!--            <h3 class="title">Консультации и заказы по телефонам</h3>-->
+<!--            <div id="con2">-->
+<!--            <div class="textCon"><h5>Бесплатно по Украине: <br><br><br><br><br>Согласно тарифа оператора:</h5></div>-->
+<!--            <div class="call_us">(0-800) 300-100 <br> (0-800) 200-100 <br><br><br>(056) 790-12-34 <br> (056) 797-63-23</div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="con">
+            <h3 class="writeUS">Напишите и мы свяжемся с вами</h3>
+            <form method="post">
+{#                action={% url 'contacts' %} >#}
+            <p id="name">Ваше имя</p>
+                <input onfocus="show('name')" onblur="closing('name')" type="text" name ='name' class="writeUS" placeholder="Имя*" required><br>
+                <p id="mail">Ваш email</p>
+            <input onfocus="show('mail')" onblur="closing('mail')" type="email" name='email' class="writeUS" placeholder="Эл. почта*" required><br>
+                <p id="mess">Введите сообщение</p>
+            <textarea onfocus="show('mess')" onblur="closing('mess')" name='message' cols="40" rows="3" class="writeUS" placeholder="Сообщение*" required></textarea><br>
+                <input type="submit" id="submit">
+                <input id="clear" type="button" value="Очистить" onclick="this.form.reset();">
+            </form>
+{#                <iframe name="frame"></iframe>#}
+{#                <dialog id="sub">#}
+{#                    <p>Данные приняты в обаработку</p>#}
+{#                    <input type="button" id="close" value="Ок">#}
+{#                </dialog>#}
+
+                <script type = "text/javascript" >
+                    function show(id){
+                        document.getElementById(id).style.display ='block';
+                    }
+                    function closing(id){
+                        document.getElementById(id).style.display ='none';
+                    }
+                    {#var dialog = document.querySelector('dialog');#}
+                    {#document.querySelector('form').onsubmit = function() {#}
+                    {#    dialog.showModal(); // Показываем диалоговое окно#}
+                    {#    document.querySelectorAll('form input, form select, form textarea, form button')#}
+                    {#        .forEach(elem => elem.setAttribute("disabled", "disabled"));#}
+                    {#{#}
+                    document.querySelector('#close').onclick = function() {
+                        dialog.close();
+                    }
+                </script>
+
+        </div>
+        <div class="workTime">
+            <h4>График работы контакт-центра</h4>
+            <div>В будни <br>Суббота <br>Воскресенье</div>
+            <div id="time">8:00 до 21:00 <br>с 9:00 до 20:00 <br>с 10:00 до 19:00</div>
+        </div>
+    </div>
+<br>
+    {% if feedbacks %}
+    {% for ff in feedbacks %}
+    <div>
+        <p><b>Идентификатор:</b> {{ff.id}} <b>Имя:</b> {{ff.name}} <b>Email:</b> {{ff.email}} <b>Сообщение:</b> {{ff.message}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+{#</div>#}
+
+{#<footer>#}
+{#    <span class="left"> Все права защищены &copy; 2020 </span><span class="right"><a href="">Служба поддержки</a></span>#}
+{#</footer>#}
+{% endblock %}
+</body>
+</html>

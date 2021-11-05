@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{#    <meta charset="UTF-8">#}
+{#    <link href="../../static/css/styles.css" rel="stylesheet" type="text/css" />#}
+{#    <link href="../../static/img/icon.ico" rel="shortcut icon" type="image/x-icon" />#}
+    <title>{% block title %}О нас - магазин "TechShop{% endblock %}</title>
+</head>
+<body>
+{% block main %}
+{#<div id="page-wrap">#}
+{#<header>#}
+{#    <a href="{% url 'index' %}" title="На главную" id="logo">TechShop</a>#}
+{#    <span id="about"><a href="{% url 'about' %}">О нас</a></span>#}
+{#    <ul class="topMenu" id="HeadMenu">#}
+{#        <li><a href="#" id="client">Клиентам</a>#}
+{#        <ul class="submenu">#}
+{#            <li><a href="{% url 'contacts' %}">Контакты</a></li>#}
+{#            <li><a href="{% url 'delivery' %}">Доставка и оплата</a></li>#}
+{#        </ul></li>#}
+{#    </ul>#}
+{#    <span class="right" id="delivery"><a href="/delivery">Доставка и оплата</a></span>#}
+{#    <span class="right" id="comments"><a href="/contacts">Контакты</a></span>#}
+{#    <input type="text" class="field" placeholder="Поиск" />#}
+{#</header>#}
+
+<div id="aboutUS" class="center">
+<h3>Кто мы?</h3>
+    <h4>Мы, компания TechShop - лидер и законодатель трендов</h4>
+<ul>
+<li><img src="../../static/img/wi-fi.png" alt="wi-fi">в продаже продуктов интернета вещей (IoT)</li>
+<li><img src="../../static/img/phone.png" alt="phone">телеком устройств</li>
+<li><img src="../../static/img/sim-card.png" alt="sim-card">телеком услуг</li>
+<li><img src="../../static/img/apple-watch.png" alt="watch">персональной электроники</li>
+</ul><br>
+<h3>Мисия</h3>
+<ul>
+    <li><img src="../../static/img/IoT.png" alt="IoT">мы раскрываем возможности цифровых экосистем</li>
+    <li><img src="../../static/img/lamp.png" alt="lamp">делаем сложные технологии - простыми</li>
+    <li><img src="../../static/img/target.png" alt="target">помогаем клиентам выбрать лучшие предложения</li>
+</ul>
+    <div class="subsN">
+    <h3>Подписывайся!</h3>
+    <h4>на рассылку свежих вакансий и новостей</h4>
+    <input type="email" placeholder="Эл. почта">
+    <input type="submit" value="Подписаться">
+    </div>
+    <div class="sendR">
+        <h3>Присоединяйся!</h3>
+        <h4>к команде TechShop</h4>
+        <input type="button" value="Отправить резюме">
+    </div>
+</div>
+{% endblock %}
+{#</div>#}
+{#<footer>#}
+{#    <span class="left"> Все права защищены &copy; 2020 </span><span class="right"><a href="">Служба поддержки</a></span>#}
+{#</footer>#}
+</body>
+</html>
