@@ -43,7 +43,7 @@
         {% for product in product %}
         <div class="item_box">
             <div class="product-item">
-                <img src="{{ product.image.url }}" alt="{{ product.title }} image">
+                <img src="{{ product.image }}" alt="{{ product.title }} image">
                 <a href="" class="add_item" data-id="{{ product.slug }}">В корзину</a>
                 <h3 class="item_title">{{ product.title }}</h3>
 
