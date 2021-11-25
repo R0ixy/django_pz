@@ -11,6 +11,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+        db_table = 'main_category'
 
 
 class Product(models.Model):
@@ -23,6 +24,9 @@ class Product(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        db_table = 'main_product'
+
 
 class Feedback(models.Model):
     name = models.CharField(max_length=255, verbose_name='Имя')
@@ -32,6 +36,9 @@ class Feedback(models.Model):
 
     def __str__(self):
         return self.email
+
+    class Meta:
+        db_table = 'main_feedback'
 
 
 class FeedbackForm(ModelForm):
