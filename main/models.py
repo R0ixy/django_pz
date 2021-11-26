@@ -25,8 +25,7 @@ class Product(models.Model):
         return self.title
 
     class Meta:
-        db_table = 'main_product'
-        db_name = 'Product'
+        db_table = 'Product'
 
 
 class Feedback(models.Model):
