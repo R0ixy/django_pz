@@ -19,6 +19,7 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
+
 @csrf_exempt
 def contacts(request):
     return render(request, 'main/contacts.html')
