@@ -14,12 +14,12 @@
         <input type="text" name ='name' class="writeUS" placeholder="Название товара" required><br>
         <input type="number" name='price' class="writeUS" placeholder="Цена" required><br>
         <input type="text" name='description' class="writeUS" placeholder="Описание" required><br>
+                <input type="text" name='img' alt="image" placeholder="Ссылка на изображение"><br>
         <select name='category' class="writeUS">
             {% for cat in category %}
                 <option class="writeUS">{{ cat.name }}</option>
             {% endfor %}
         </select><br>
-        <input type="text" name='img' alt="image"><br>
         <input type="submit" id="submit">
     </label>
     </form>

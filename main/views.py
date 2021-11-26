@@ -16,13 +16,13 @@ def index(request):
     return render(request, "main/index.html", {"product": product})
 
 
-
 def about(request):
     return render(request, 'main/about.html')
 
 
 def contacts(request):
     return render(request, 'main/contacts.html')
+
 
 @login_required(login_url="/accounts/login/")
 @csrf_exempt
