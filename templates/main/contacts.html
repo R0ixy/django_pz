@@ -3,71 +3,119 @@
 <html lang="en">
 <head>
     <title>{% block title %}Контакты - магазин "TechShop"{% endblock %}</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0NJ7G4CC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM0NJ7G4CC');
+    </script>
 </head>
 <body>
 {% block main %}
 
-    <div id="container">
-        <div class="con">
+<div id="container">
+    <div class="con">
         <table class="tab">
             <caption><h3>Консультации и заказы по телефонам</h3></caption>
-            <tr><td rowspan="2">Бесплатно по Украине:</td><td>(0-800) 300-100</td></tr>
-            <tr><td>(0-800) 200-100</td></tr>
-            <tr><td rowspan="2">Согласно тарифа оператора:</td><td>(056) 790-12-34 </td></tr>
-            <tr><td>(056) 797-63-23</td></tr>
+            <tr>
+                <td rowspan="2">Бесплатно по Украине:</td>
+                <td>(0-800) 300-100</td>
+            </tr>
+            <tr>
+                <td>(0-800) 200-100</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Согласно тарифа оператора:</td>
+                <td>(056) 790-12-34</td>
+            </tr>
+            <tr>
+                <td>(056) 797-63-23</td>
+            </tr>
         </table>
-        </div>
-        <div class="con">
-            <h3 class="writeUS">Напишите и мы свяжемся с вами</h3>
-            <form method="post">
+    </div>
+    <div class="con">
+        <h3 class="writeUS">Напишите и мы свяжемся с вами</h3>
+        <form method="post">
             <p id="name">Ваше имя</p>
-                <input onfocus="show('name')" onblur="closing('name')" type="text" name ='name' class="writeUS" placeholder="Имя*" required><br>
-                <p id="mail">Ваш email</p>
-            <input onfocus="show('mail')" onblur="closing('mail')" type="email" name='email' class="writeUS" placeholder="Эл. почта*" required><br>
-                <p id="mess">Введите сообщение</p>
-            <textarea onfocus="show('mess')" onblur="closing('mess')" name='message' cols="40" rows="3" class="writeUS" placeholder="Сообщение*" required></textarea><br>
-                <input type="submit" id="submit">
-                <input id="clear" type="button" value="Очистить" onclick="this.form.reset();">
-            </form>
-{#                <iframe name="frame"></iframe>#}
-{#                <dialog id="sub">#}
-{#                    <p>Данные приняты в обаработку</p>#}
-{#                    <input type="button" id="close" value="Ок">#}
-{#                </dialog>#}
+            <input onfocus="show('name')" onblur="closing('name')" type="text" name='name' class="writeUS"
+                   placeholder="Имя*" required><br>
+            <p id="mail">Ваш email</p>
+            <input onfocus="show('mail')" onblur="closing('mail')" type="email" name='email' class="writeUS"
+                   placeholder="Эл. почта*" required><br>
+            <p id="mess">Введите сообщение</p>
+            <textarea onfocus="show('mess')" onblur="closing('mess')" name='message' cols="40" rows="3" class="writeUS"
+                      placeholder="Сообщение*" required></textarea><br>
+            <input type="submit" id="submit">
+            <input id="clear" type="button" value="Очистить" onclick="this.form.reset();">
+        </form>
+        {#
+        <iframe name="frame"></iframe>
+        #}
+        {#
+        <dialog id="sub">#}
+            {# <p>Данные приняты в обаработку</p>#}
+            {# <input type="button" id="close" value="Ок">#}
+            {#
+        </dialog>
+        #}
 
-                <script type = "text/javascript" >
-                    function show(id){
-                        document.getElementById(id).style.display ='block';
+        <script type="text/javascript">
+            function show(id) {
+                document.getElementById(id).style.display = 'block';
+            }
+
+            function closing(id) {
+                document.getElementById(id).style.display = 'none';
+            }
+
+            {
+                #var
+                dialog = document.querySelector('dialog');
+                #
+            }
+            {
+                #document.querySelector('form').onsubmit = function () {
+                    #
+                }
+                {
+                    #    dialog.showModal(); // Показываем диалоговое окно#}
+                    {
+                        #    document.querySelectorAll('form input, form select, form textarea, form button')
+                        #
                     }
-                    function closing(id){
-                        document.getElementById(id).style.display ='none';
+                    {
+                        #.forEach(elem => elem.setAttribute("disabled", "disabled"));
+                        #
                     }
-                    {#var dialog = document.querySelector('dialog');#}
-                    {#document.querySelector('form').onsubmit = function() {#}
-                    {#    dialog.showModal(); // Показываем диалоговое окно#}
-                    {#    document.querySelectorAll('form input, form select, form textarea, form button')#}
-                    {#        .forEach(elem => elem.setAttribute("disabled", "disabled"));#}
                     {#{#}
-                    document.querySelector('#close').onclick = function() {
-                        dialog.close();
-                    }
-                </script>
+                        document.querySelector('#close').onclick = function () {
+                            dialog.close();
+                        }
+        </script>
 
-        </div>
-        <div class="workTime">
-            <h4>График работы контакт-центра</h4>
-            <div>В будни <br>Суббота <br>Воскресенье</div>
-            <div id="time">8:00 до 21:00 <br>с 9:00 до 20:00 <br>с 10:00 до 19:00</div>
-        </div>
     </div>
+    <div class="workTime">
+        <h4>График работы контакт-центра</h4>
+        <div>В будни <br>Суббота <br>Воскресенье</div>
+        <div id="time">8:00 до 21:00 <br>с 9:00 до 20:00 <br>с 10:00 до 19:00</div>
+    </div>
+</div>
 <br>
-    {% if feedbacks %}
-    {% for ff in feedbacks %}
-    <div>
-        <p><b>Идентификатор:</b> {{ff.id}} <b>Имя:</b> {{ff.name}} <b>Email:</b> {{ff.email}} <b>Сообщение:</b> {{ff.message}}</p>
-    </div>
-    {% endfor %}
-    {% endif %}
+{% if feedbacks %}
+{% for ff in feedbacks %}
+<div>
+    <p><b>Идентификатор:</b> {{ff.id}} <b>Имя:</b> {{ff.name}} <b>Email:</b> {{ff.email}} <b>Сообщение:</b>
+        {{ff.message}}</p>
+</div>
+{% endfor %}
+{% endif %}
 
 {% endblock %}
 </body>

@@ -3,27 +3,40 @@
 <html lang="en">
 <head>
     <title>{% block title %}Добавление товара - магазин "TechShop"{% endblock %}</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0NJ7G4CC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM0NJ7G4CC');
+    </script>
 </head>
 <body>
 {% block main %}
-    <br>
-    <center>
-    <form action="/addproduct/" method="post" >
+<br>
+<center>
+    <form action="/addproduct/" method="post">
         {% csrf_token %}
-    <label>
-        <input type="text" name ='name' class="writeUS" placeholder="Название товара" required><br>
-        <input type="number" name='price' class="writeUS" placeholder="Цена" required><br>
-        <input type="text" name='description' class="writeUS" placeholder="Описание" required><br>
-                <input type="text" name='img' alt="image" placeholder="Ссылка на изображение"><br>
-        <select name='category' class="writeUS">
-            {% for cat in category %}
+        <label>
+            <input type="text" name='name' class="writeUS" placeholder="Название товара" required><br>
+            <input type="number" name='price' class="writeUS" placeholder="Цена" required><br>
+            <input type="text" name='description' class="writeUS" placeholder="Описание" required><br>
+            <input type="text" name='img' alt="image" placeholder="Ссылка на изображение"><br>
+            <select name='category' class="writeUS">
+                {% for cat in category %}
                 <option class="writeUS">{{ cat.name }}</option>
-            {% endfor %}
-        </select><br>
-        <input type="submit" id="submit">
-    </label>
+                {% endfor %}
+            </select><br>
+            <input type="submit" id="submit">
+        </label>
     </form>
-    </center>
+</center>
 {% endblock %}
 </body>
 </html>

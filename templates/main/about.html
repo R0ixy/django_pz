@@ -3,30 +3,44 @@
 <html lang="en">
 <head>
     <title>{% block title %}О нас - магазин "TechShop{% endblock %}</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0NJ7G4CC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM0NJ7G4CC');
+    </script>
 </head>
 <body>
 {% block main %}
 
 <div id="aboutUS" class="center">
-<h3>Кто мы?</h3>
+    <h3>Кто мы?</h3>
     <h4>Мы, компания TechShop - лидер и законодатель трендов</h4>
-<ul>
-<li><img src="../../static/img/wi-fi.png" alt="wi-fi">в продаже продуктов интернета вещей (IoT)</li>
-<li><img src="../../static/img/phone.png" alt="phone">телеком устройств</li>
-<li><img src="../../static/img/sim-card.png" alt="sim-card">телеком услуг</li>
-<li><img src="../../static/img/apple-watch.png" alt="watch">персональной электроники</li>
-</ul><br>
-<h3>Мисия</h3>
-<ul>
-    <li><img src="../../static/img/IoT.png" alt="IoT">мы раскрываем возможности цифровых экосистем</li>
-    <li><img src="../../static/img/lamp.png" alt="lamp">делаем сложные технологии - простыми</li>
-    <li><img src="../../static/img/target.png" alt="target">помогаем клиентам выбрать лучшие предложения</li>
-</ul>
+    <ul>
+        <li><img src="../../static/img/wi-fi.png" alt="wi-fi">в продаже продуктов интернета вещей (IoT)</li>
+        <li><img src="../../static/img/phone.png" alt="phone">телеком устройств</li>
+        <li><img src="../../static/img/sim-card.png" alt="sim-card">телеком услуг</li>
+        <li><img src="../../static/img/apple-watch.png" alt="watch">персональной электроники</li>
+    </ul>
+    <br>
+    <h3>Мисия</h3>
+    <ul>
+        <li><img src="../../static/img/IoT.png" alt="IoT">мы раскрываем возможности цифровых экосистем</li>
+        <li><img src="../../static/img/lamp.png" alt="lamp">делаем сложные технологии - простыми</li>
+        <li><img src="../../static/img/target.png" alt="target">помогаем клиентам выбрать лучшие предложения</li>
+    </ul>
     <div class="subsN">
-    <h3>Подписывайся!</h3>
-    <h4>на рассылку свежих вакансий и новостей</h4>
-    <input type="email" placeholder="Эл. почта">
-    <input type="submit" value="Подписаться">
+        <h3>Подписывайся!</h3>
+        <h4>на рассылку свежих вакансий и новостей</h4>
+        <input type="email" placeholder="Эл. почта">
+        <input type="submit" value="Подписаться">
     </div>
     <div class="sendR">
         <h3>Присоединяйся!</h3>

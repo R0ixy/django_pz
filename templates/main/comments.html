@@ -2,20 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Comments</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0NJ7G4CC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM0NJ7G4CC');
+    </script>
 </head>
 <style>
-    body{display: flex;justify-content: center; background-color: #f7f7f7}
-    div{border-radius: 50px;margin: 50px; padding: 50px; background-color: ghostwhite; border: 2px solid silver}
+    body {
+        display: flex;
+        justify-content: center;
+        background-color: #f7f7f7
+    }
+
+    div {
+        border-radius: 50px;
+        margin: 50px;
+        padding: 50px;
+        background-color: ghostwhite;
+        border: 2px solid silver
+    }
 </style>
 <body>?
 <div>
-    <h2>Отзывы о товаре  "{{ products }}"</h2>
+    <h2>Отзывы о товаре "{{ products }}"</h2>
     {% for fb in feedbacks %}
-        <hr>
-        <h4>Имя: {{ fb.name }} </h4>
-        <p>Email: {{ fb.email }}</p>
-        <p>Сообщение: {{ fb.message }}</p>
+    <hr>
+    <h4>Имя: {{ fb.name }} </h4>
+    <p>Email: {{ fb.email }}</p>
+    <p>Сообщение: {{ fb.message }}</p>
     {% endfor %}
 </div>
 </body>
