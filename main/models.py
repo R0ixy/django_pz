@@ -11,7 +11,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
-        db_table = 'main_category'
+        db_table = 'Category'
 
 
 class Product(models.Model):
@@ -26,6 +26,7 @@ class Product(models.Model):
 
     class Meta:
         db_table = 'main_product'
+        db_name = 'Product'
 
 
 class Feedback(models.Model):
@@ -38,7 +39,7 @@ class Feedback(models.Model):
         return self.email
 
     class Meta:
-        db_table = 'main_feedback'
+        db_table = 'Feedback'
 
 
 class FeedbackForm(ModelForm):
