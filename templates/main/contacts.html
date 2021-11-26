@@ -42,6 +42,7 @@
     </div>
     <div class="con">
         <h3 class="writeUS">Напишите и мы свяжемся с вами</h3>
+
         <form method="post">
             <p id="name">Ваше имя</p>
             <input onfocus="show('name')" onblur="closing('name')" type="text" name='name' class="writeUS"
@@ -55,16 +56,15 @@
             <input type="submit" id="submit">
             <input id="clear" type="button" value="Очистить" onclick="this.form.reset();">
         </form>
-        {#
+
         <iframe name="frame"></iframe>
-        #}
-        {#
+
         <dialog id="sub">#}
-            {# <p>Данные приняты в обаработку</p>#}
-            {# <input type="button" id="close" value="Ок">#}
-            {#
+            <p>Данные приняты в обаработку</p>
+            <input type="button" id="close" value="Ок">
+
         </dialog>
-        #}
+
 
         <script type="text/javascript">
             function show(id) {
@@ -75,29 +75,15 @@
                 document.getElementById(id).style.display = 'none';
             }
 
-            {
-                #var
-                dialog = document.querySelector('dialog');
-                #
+            var dialog = document.querySelector('dialog');
+            document.querySelector('form').onsubmit = function () {
+                dialog.showModal(); // Показываем диалоговое окно
+                document.querySelectorAll('form input, form select, form textarea, form button')
+                    .forEach(elem => elem.setAttribute("disabled", "disabled"));
             }
-            {
-                #document.querySelector('form').onsubmit = function () {
-                    #
-                }
-                {
-                    #    dialog.showModal(); // Показываем диалоговое окно#}
-                    {
-                        #    document.querySelectorAll('form input, form select, form textarea, form button')
-                        #
-                    }
-                    {
-                        #.forEach(elem => elem.setAttribute("disabled", "disabled"));
-                        #
-                    }
-                    {#{#}
-                        document.querySelector('#close').onclick = function () {
-                            dialog.close();
-                        }
+            document.querySelector('#close').onclick = function () {
+                dialog.close();
+            }
         </script>
 
     </div>
