@@ -2,44 +2,55 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	<title>{% block title %}{% endblock %}</title>
-	<link rel="stylesheet" href="../../static/css/styles.css">
-    <link href="../../static/img/icon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link href="../../static/img/icon.ico" rel="shortcut icon" type="image/x-icon"/>
 
-	<style>
-        body {
-        background: {% block backcolour %} {% endblock %}
-        }
+    <style>
+        body{background-color: {% block backcolour }  {%  endblock  % }}
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0NJ7G4CC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM0NJ7G4CC');
+    </script>
 </head>
 <body>
 
 <div id="page-wrap">
-  <header>
-	{% block header %}
+    <header>
+        {% block header %}
         <a href="{% url 'index' %}" title="На главную" id="logo">TechShop</a>
-    <span id="about"><a href="{% url 'about' %}">О нас</a></span>
-    <input type="text" class="field" placeholder="Поиск" />
-    <ul class="topMenu" id="HeadMenu">
-        <li><a href="#" id="client">Клиентам</a>
-        <ul class="submenu">
-            <li><a href="{% url 'contacts' %}">Контакты</a></li>
-            <li><a href="{% url 'delivery' %}">Доставка и оплата</a></li>
+        <span id="about"><a href="{% url 'about' %}">О нас</a></span>
+        <input type="text" class="field" placeholder="Поиск"/>
+        <ul class="topMenu" id="HeadMenu">
+            <li><a href="#" id="client">Клиентам</a>
+                <ul class="submenu">
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                    <li><a href="{% url 'delivery' %}">Доставка и оплата</a></li>
+                </ul>
+            </li>
         </ul>
-        </li>
-    </ul>
-    <span class="right"><a href="#" id="checkout">Корзина</a></span>
-    {% endblock %}
-  </header>
+        <span class="right"><a href="#" id="checkout">Корзина</a></span>
+        {% endblock %}
+    </header>
 
-	{% block main %}
-	{% endblock %}
+    {% block main %}
+    {% endblock %}
 </div>
 <footer>
-	{% block footer %}
-        <span class="left"> Все права защищены &copy; 2021 </span><span class="right"><a href="">Служба поддержки</a></span>
-	{% endblock %}
+    {% block footer %}
+    <span class="left"> Все права защищены &copy; 2021 </span><span class="right"><a href="">Служба поддержки</a></span>
+    {% endblock %}
 </footer>
 </body>
 </html>
